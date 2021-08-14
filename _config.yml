@@ -10,7 +10,7 @@ description: "记录云原生技术栈"
 keywords: 云原生系列 CNCF 技术文档
 timezone: Asia/Shanghai
 encoding: "utf-8"
-repository: beastpu/pbeastpu.github.io
+repository: beastpu/beastpu.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
