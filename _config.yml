@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://piao100101.github.io/
+url: https://beastpu.github.io
 date_format: "ordinal"
 title: 云原生科学
 subtitle: ""
@@ -10,7 +10,7 @@ description: "记录云原生技术栈"
 keywords: 云原生系列 CNCF 技术文档
 timezone: Asia/Shanghai
 encoding: "utf-8"
-repository: piao100101/piao100101.github.io
+repository: beastpu/pbeastpu.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -51,9 +51,9 @@ highlight_theme: github
 author: Beast
 organization: 
 organization_url: 
-github_username: piao100101
+github_username: beastpu
 location: ShangHai, China
-email: piao100101@gmail.com
+email: beastpu@gmail.com
 
 # ---------------- #
 #    Navigation    #
@@ -124,7 +124,7 @@ collections:
 # support provider: disqus, gitment, gitalk
 comments_provider: gitalk
 gitalk:
-    owner: piao100101
+    owner: beastpu
     repo: blog-comments
     clientID: 82ed91c3fc394c09f1a6
     clientSecret: 46498c2c88b48b97f74d76eb4224c74fa8b77078
