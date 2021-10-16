@@ -5,13 +5,9 @@ category: utility
 tags: [chrome extention]
 ---
 
-
-# description
+# 开发chrome扩展程序
 
 当我们访问web网站，发现页面的样式不符合我们的需求，我们可以通过chorme扩展程序修改页面。
-
-
-# 开发chrome扩展程序
 
 首先我们需要准备一个清单文件-manifest.json，告诉chrome浏览器你的扩展程序的基本信息。创建一个目录包含manifest.json文件，文件内容如下：
 
