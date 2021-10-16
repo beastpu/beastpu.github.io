@@ -33,7 +33,10 @@ http {
 
 ```
 
-limit\_req\_zone $binary\_remote\_addr zone=one:10m rate=1r/s;                                                                                       其中one表示设置的共享内存大小，访问频率为每次一个请求。limit\_req\_zone 只能配置在http域下，支持http协议。                                                                                                                                                                         `limit_req zone=one burst=5;`  可以写在server或location区域内，burst表示最大请求的次数。我们设定了1秒一个请求的频率，如果一秒多于一个请求且小于5，则多余的请求被延迟，如果大于5，则返回503错误。 如果不希望延迟，则可以配置为  `limit_req zone=one burst=5 nodelay;`                                                                                                                                                                                                                                                                                                                            
+`limit\_req_zone $binary_remote_addr zone=one:10m rate=1r/s`其中one表示设置的共享内存大小，访问频率为每次一个请求。
+`limit_req_zone` 只能配置在http域下，支持http协议。
+`limit_req zone=one burst=5;`  可以写在server或location区域内，burst表示最大请求的次数。
+我们设定了1秒一个请求的频率，如果一秒多于一个请求且小于5，则多余的请求被延迟，如果大于5，则返回503错误。 如果不希望延迟，则可以配置为  `limit_req zone=one burst=5 nodelay;`                                                                                                                                                                                                                                                                                                                            
 
 可以用ab工具并发测试，测试结果如下：
 
