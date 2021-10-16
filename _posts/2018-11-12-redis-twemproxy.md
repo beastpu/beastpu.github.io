@@ -28,20 +28,17 @@ mem_fragmentation_ratio:3.56
 mem_allocator:jemalloc-4.0.3
 ```
 
-* **used\_memory**：Redis分配器分配的内存总量（单位是字节），包括使用的虚拟内存（即swap\); used\_memory\_human只是显示更友好。
-* **used\_memory\_rss**:  Redis进程占据操作系统的内存（单位是字节），与top命令的RES\(Resident Memory\)常驻内存字段一致；除了分配器分配的内存之外，used\_memory\_rss还包括进程运行本身需要的内存、内存碎片等，_但是不包括虚拟内存_。
+**used\_memory**：Redis分配器分配的内存总量（单位是字节），包括使用的虚拟内存（即swap\); used\_memory\_human只是显示更友好。
+
+**used\_memory\_rss**:  Redis进程占据操作系统的内存（单位是字节），与top命令的RES\(Resident Memory\)常驻内存字段一致；除了分配器分配的内存之外，used\_memory\_rss还包括进程运行本身需要的内存、内存碎片等，_但是不包括虚拟内存_。
 
 > used\_memory和used\_memory\_rss，前者是从Redis角度得到的量，后者是从操作系统角度得到的量。二者之所以有所不同，一方面是因为内存碎片和Redis进程运行需要占用内存，使得前者可能比后者小，另一方面虚拟内存的存在，使得前者可能比后者大
->
+
 > 由于在实际应用中，Redis的数据量会比较大，此时进程运行占用的内存与Redis数据量和内存碎片相比，都会小得多；因此used\_memory\_rss和used\_memory的比例，便成了衡量Redis内存碎片率的参数；这个参数就是mem\_fragmentation\_ratio。
 
-* **mem\_fragmentation\_ratio:** 内存碎片比率，该值是used\_memory\_rss / used\_memory的比值。
-  * mem\_fragmentation\_ratio一般大于1，且该值越大，内存碎片比例越大。mem\_fragmentation\_ratio&lt;1，说明Redis使用了虚拟内存，由于虚拟内存的媒介是磁盘，比内存速度要慢很多，当这种情况出现时，应该及时排查，如果内存不足应该及时处理，如增加Redis节点、增加Redis服务器的内存、优化应用等。
-  * 一般来说，mem\_fragmentation\_ratio在1.03左右是比较健康的状态（对于jemalloc来说）；上面截图中的mem\_fragmentation\_ratio值很大，是因为还没有向Redis中存入数据，Redis进程本身运行的内存使得used\_memory\_rss 比used\_memory大得多。
-* 
-
-
-
+**mem\_fragmentation\_ratio:** 内存碎片比率，该值是used\_memory\_rss / used\_memory的比值。
+- `mem_fragmentation_ratio`一般大于1，且该值越大，内存碎片比例越大。mem\_fragmentation\_ratio&lt;1，说明Redis使用了虚拟内存，由于虚拟内存的媒介是磁盘，比内存速度要慢很多，当这种情况出现时，应该及时排查，如果内存不足应该及时处理，如增加Redis节点、增加Redis服务器的内存、优化应用等。
+-  一般来说，`mem_fragmentation_ratio`在1.03左右是比较健康的状态（对于jemalloc来说）；上面截图中的`mem_fragmentation_ratio`值很大，是因为还没有向Redis中存入数据，Redis进程本身运行的内存使得`used_memory_rss` 比`used_memory大`得多。
 
 # redis twemproxy集群架构
 
