@@ -1,4 +1,9 @@
-
+---
+layout: post
+title: nginx-geoip2
+category: nginx
+tags: [nginx geoip 限制IP来源]
+---
 
 # geoip2限制国家地区访问
 nginx的geoip2模块，支持免费的geolite2数据库，可以限制国家和地区的ip访问。
