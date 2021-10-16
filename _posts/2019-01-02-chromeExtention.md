@@ -120,7 +120,7 @@ chrome.runtime.onMessage.addListener(
 
 
 完整的结构如下：
-![21244aac8f20c7777f891c78298ea942.png](evernotecid://1AD0D11D-2A61-43B1-9340-EC1B968A83A7/appyinxiangcom/30786486/ENResource/p453)
+![](/images/posts/utility/structure.png)
 
 
 manifest完整内容：
